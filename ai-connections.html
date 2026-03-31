@@ -345,6 +345,11 @@
         </footer>
     </div>
     
+    function toggleMenu() {
+            var nav = document.querySelector(".mobile-nav");
+            nav.classList.toggle("active");
+        }
+        
     <script>
         // Close mobile menu when clicking a link
         document.querySelectorAll('.mobile-nav a').forEach(link => {

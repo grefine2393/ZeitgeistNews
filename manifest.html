@@ -332,6 +332,11 @@
         </footer>
     </div>
     
+    function toggleMenu() {
+            var nav = document.querySelector(".mobile-nav");
+            nav.classList.toggle("active");
+        }
+        
     <script>
         document.querySelectorAll('.mobile-nav a').forEach(link => {
             link.addEventListener('click', () => {

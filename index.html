@@ -413,7 +413,7 @@
     <div class="container">
         <div class="topbar">
             <div class="logo"><a href="index.html">ZEITGEIST.NEWS</a></div>
-            <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">☰ MENU</button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰ MENU</button>
             <div class="nav">
                 <a href="index.html" class="active">Startseite</a>
                 <a href="allgemeinwissen.html">Allgemeinwissen</a>
@@ -499,6 +499,11 @@
     </div>
     
     <script>
+        function toggleMenu() {
+            var nav = document.querySelector('.mobile-nav');
+            nav.classList.toggle('active');
+        }
+        
         // Close mobile menu when clicking a link
         document.querySelectorAll('.mobile-nav a').forEach(link => {
             link.addEventListener('click', () => {
