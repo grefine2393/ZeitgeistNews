@@ -4,166 +4,370 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeitgeist News</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0d0d0d;
+            --bg-alt: #141414;
+            --text: #c9c9c9;
+            --text-dim: #6a6a6a;
+            --accent: #d4a574;
+            --accent-dim: #8b7355;
+            --border: #262626;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
-            color: #e5e5e5;
-            min-height: 100vh;
+            font-family: 'Crimson Pro', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 18px;
         }
+
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        header {
-            padding: 30px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-        }
-        .logo::after {
-            content: 'NEWS';
-            display: block;
-            font-family: 'Inter', sans-serif;
-            font-size: 10px;
-            letter-spacing: 4px;
-            color: #666;
-            margin-top: 2px;
-        }
-        .date {
-            font-size: 12px;
-            color: #666;
-            letter-spacing: 1px;
-        }
-        .headline {
-            padding: 100px 0;
-            border-bottom: 1px solid #222;
-        }
-        .headline h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 80px;
-            font-weight: 400;
-            line-height: 1.1;
             max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
-        .headline h1 .accent {
-            color: #c9a227;
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        /* Manifesto */
+        .manifesto {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .manifesto h1 {
+            font-size: 42px;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--text);
+            margin-bottom: 40px;
+        }
+
+        .manifesto h1 span {
+            color: var(--accent);
             font-style: italic;
         }
-        .headline-meta {
-            margin-top: 30px;
+
+        .manifesto p {
+            color: var(--text-dim);
+            max-width: 700px;
+            font-size: 20px;
+        }
+
+        .quote {
+            margin-top: 50px;
+            padding: 24px 30px;
+            background: var(--bg-alt);
+            border-left: 2px solid var(--accent);
+            font-style: italic;
+        }
+
+        .quote p {
+            font-size: 18px;
+            color: var(--text);
+        }
+
+        .quote cite {
+            display: block;
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-dim);
+            font-style: normal;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 30px 0;
             display: flex;
             gap: 30px;
-            font-size: 13px;
-            color: #666;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border);
         }
-        .content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
+
+        nav a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        main {
             padding: 60px 0;
         }
-        .main-article img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 24px;
-            background: #1a1a1a;
-        }
-        .main-article h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 400;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-        .main-article p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #999;
-        }
-        .sidebar h3 {
+
+        .section-title {
+            font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
-            text-transform: uppercase;
             letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 24px;
+            text-transform: uppercase;
+            color: var(--accent-dim);
+            margin-bottom: 30px;
         }
-        .sidebar-article {
-            padding: 20px 0;
-            border-bottom: 1px solid #222;
+
+        /* Must-See */
+        .must-see {
+            margin-bottom: 80px;
         }
-        .sidebar-article h4 {
-            font-size: 18px;
-            font-weight: 400;
+
+        .must-see-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-alt);
+            padding: 30px;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-dim);
+        }
+
+        .card-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
             line-height: 1.4;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: var(--text-dim);
+        }
+
+        .card-meta {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        /* AI Connection */
+        .ai-section {
+            margin-bottom: 80px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--bg-alt) 0%, #1a1714 100%);
+            border: 1px solid var(--border);
+        }
+
+        .ai-section h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .ai-section p {
+            color: var(--text-dim);
+            max-width: 600px;
+        }
+
+        /* Latest Articles */
+        .latest {
+            margin-bottom: 80px;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 24px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-dim);
+            padding-top: 6px;
+        }
+
+        .article-content h3 {
+            font-size: 20px;
+            font-weight: 600;
             margin-bottom: 8px;
         }
-        .sidebar-article span {
-            font-size: 12px;
-            color: #c9a227;
+
+        .article-content h3 a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
         }
-        .footer {
-            padding: 40px 0;
-            border-top: 1px solid #222;
+
+        .article-content h3 a:hover {
+            color: var(--accent);
+        }
+
+        .article-content p {
+            font-size: 16px;
+            color: var(--text-dim);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
             text-align: center;
-            font-size: 12px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--text-dim);
+        }
+
+        footer .disclaimer {
+            margin-top: 20px;
+            font-size: 13px;
             color: #444;
         }
-        @media (max-width: 768px) {
-            .headline h1 { font-size: 48px; }
-            .content-grid { grid-template-columns: 1fr; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .manifesto h1 { font-size: 28px; }
+            .article-item { grid-template-columns: 1fr; }
+            nav { gap: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">ZEITGEIST</div>
-            <div class="date">Dienstag, 31. März 2026</div>
+            <div class="logo">Zeitgeist News</div>
         </header>
-        <section class="headline">
-            <h1>Die Geschichte schreibt sich <span class="accent">neu</span></h1>
-            <div class="headline-meta">
-                <span>Von Redaktion</span>
-                <span>•</span>
-                <span>5 Min Lesezeit</span>
+
+        <section class="manifesto">
+            <h1>Keiner wird uns <span>retten</span>.</h1>
+            <p>Kein Staat. Keine Rentenkasse. Kein Militär. Keine Banken. Wir sind auf uns gestellt – auf unsere Familie, Freunde und Community. Das Fenster wird kleiner, aber wir haben noch Zeit, uns vorzubereiten.</p>
+            
+            <div class="quote">
+                <p>"Nichts wird wie gewohnt werden. Entweder wir gestalten aktiv unser Leben oder wir werden gestaltet."</p>
             </div>
         </section>
-        <div class="content-grid">
-            <article class="main-article">
-                <img src="" alt="">
-                <h2>Die wichtigesten Ereignisse unserer Zeit</h2>
-                <p>In einer sich rasant verändernden Welt ist es wichtiger denn je, informiert zu bleiben. Zeitgeist News bietet Ihnen tiefgründige Analysen und relevante Nachrichten aus aller Welt.</p>
-            </article>
-            <aside class="sidebar">
-                <h3>Aktuell</h3>
-                <div class="sidebar-article">
-                    <h4>Wirtschaft im Aufschwung</h4>
-                    <span>Wirtschaft</span>
+
+        <nav>
+            <a href="#" class="active">Startseite</a>
+            <a href="#">Geopolitik</a>
+            <a href="#">Wirtschaft</a>
+            <a href="#">Gesellschaft</a>
+            <a href="#">Resilienz</a>
+            <a href="#">AI Connections</a>
+        </nav>
+
+        <main>
+            <!-- Must-See Section -->
+            <section class="must-see">
+                <div class="section-title">Allgemeinwissen</div>
+                <p style="color: var(--text-dim); margin-bottom: 30px;">Die wichtigsten Inhalte, um die aktuellen Geschehnisse zu verstehen. Wächst mit der Zeit.</p>
+                
+                <div class="must-see-grid">
+                    <article class="card">
+                        <div class="card-category">Wirtschaft</div>
+                        <h3>Das Fiat-Geldsystem</h3>
+                        <p>Warum unser Geld keinen intrinsischen Wert hat und was das für die Zukunft bedeutet.</p>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card-category">Geopolitik</div>
+                        <h3>Die neue Weltordnung</h3>
+                        <p>Wie sich die globalen Machtverhältnisse verschieben und was das für uns bedeutet.</p>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card-category">Resilienz</div>
+                        <h3>Mentale Stärke</h3>
+                        <p>Warum die spirituelle und mentale Vorbereitung entscheidend sein wird.</p>
+                    </article>
                 </div>
-                <div class="sidebar-article">
-                    <h4>Technologie von morgen</h4>
-                    <span>Tech</span>
+            </section>
+
+            <!-- AI Connection Experiment -->
+            <section class="ai-section">
+                <h2>◈ AI Connection Experiment</h2>
+                <p>Tägliche Analyse aller erschienenen Inhalte – automatisch verknüpft, um Zusammenhänge sichtbar zu machen. Was verbindet die Ereignisse? Welche Muster entstehen?</p>
+            </section>
+
+            <!-- Latest Articles -->
+            <section class="latest">
+                <div class="section-title">Neueste Inhalte</div>
+                
+                <div class="article-list">
+                    <article class="article-item">
+                        <div class="article-date">31.03.2026</div>
+                        <div class="article-content">
+                            <h3><a href="#">Nahostkrieg und die Weltwirtschaft</a></h3>
+                            <p>Wie die aktuellen Konflikte die globalen Lieferketten bedrohen und welche Auswirkungen das für Europa hat.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="article-item">
+                        <div class="article-date">30.03.2026</div>
+                        <div class="article-content">
+                            <h3><a href="#">Resilienz statt Effizienz</a></h3>
+                            <p>Warum Just-in-Time-Produktionen und globale Abhängigkeiten unsere größte Schwachstelle sind.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="article-item">
+                        <div class="article-date">29.03.2026</div>
+                        <div class="article-content">
+                            <h3><a href="#">Die algorithmische Falle</a></h3>
+                            <p>Warum weder Mainstream noch "alternative Medien" uns die Wahrheit liefern – und wie wir trotzdem informiert bleiben.</p>
+                        </div>
+                    </article>
                 </div>
-                <div class="sidebar-article">
-                    <h4>Kultur &amp; Gesellschaft</h4>
-                    <span>Kultur</span>
-                </div>
-            </aside>
-        </div>
-        <footer class="footer">
-            © 2026 Zeitgeist News – Relevant. Kompakt. Objektiv.
+            </section>
+        </main>
+
+        <footer>
+            <p>Zeitgeist News – Wissen für die, die es brauchen.</p>
+            <p class="disclaimer">Keine Werbung. Keine Cookies. Keine Verkaufs. Nur Information.</p>
         </footer>
     </div>
 </body>
