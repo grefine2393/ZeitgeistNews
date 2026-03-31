@@ -5,20 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeitgeist News</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #eaeaea;
         }
-        h1 {
-            color: #333;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo img {
+            max-width: 300px;
+            height: auto;
+        }
+        .logo h1 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            color: #e94560;
+            margin-bottom: 5px;
+        }
+        .logo p {
+            font-size: 16px;
+            letter-spacing: 8px;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .card h2 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .card p {
+            line-height: 1.6;
+            color: #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h1>Zeitgeist News</h1>
-    <p>Willkommen bei Zeitgeist News.</p>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.svg" alt="Zeitgeist News Logo">
+        </div>
+        
+        <div class="card">
+            <h2>Willkommen bei Zeitgeist News</h2>
+            <p>Ihre Quelle für aktuelle Nachrichten und wichtige Ereignisse. Wir halten Sie informiert über das, was die Welt bewegt.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Coming Soon</h2>
+            <p>Diese Seite wird in Kürze mit aktuellen Nachrichten erweitert. Bleiben Sie dran!</p>
+        </div>
+        
+        <footer>
+            © 2026 Zeitgeist News. Alle Rechte vorbehalten.
+        </footer>
+    </div>
 </body>
 </html>
