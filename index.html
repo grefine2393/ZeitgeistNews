@@ -36,7 +36,7 @@
         
         /* Top bar */
         .topbar {
-            padding: 24px 0;
+            padding: 20px 0;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
@@ -61,6 +61,18 @@
             text-decoration: none;
         }
         
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+        }
+        
         .nav {
             display: flex;
             gap: 20px;
@@ -73,11 +85,40 @@
             text-decoration: none;
             letter-spacing: 1px;
             transition: color 0.2s;
+            padding: 6px 12px;
+            border-radius: 6px;
         }
         
-        .nav a:hover {
+        .nav a:hover, .nav a.active {
             color: var(--accent);
+            background: rgba(0, 255, 204, 0.08);
         }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(8, 8, 12, 0.98);
+            border-bottom: 1px solid var(--border);
+            padding: 20px;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .mobile-nav.active { display: flex; }
+        
+        .mobile-nav a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--text-dim);
+            text-decoration: none;
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .mobile-nav a:hover { color: var(--accent); }
         
         .date {
             font-family: 'JetBrains Mono', monospace;
@@ -326,6 +367,18 @@
             z-index: 1;
         }
         
+        .ai-box a {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ai-box a:hover { text-decoration: underline; }
+        
         /* Footer */
         footer {
             padding: 40px 0;
@@ -340,11 +393,19 @@
             letter-spacing: 3px;
         }
         
+        /* Mobile */
         @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav { display: none; }
+            .date { display: none; }
+            
             .main-grid { grid-template-columns: 1fr; }
-            .sidebar { border: none; padding: 0; }
+            .sidebar { border: none; padding: 0; margin-top: 40px; }
             .hero h1 { font-size: 36px; }
             .hero { padding: 50px 0 40px; }
+            .hero p { font-size: 15px; }
+            .article-title { font-size: 18px; }
+            .articles-list { gap: 20px; }
         }
     </style>
 </head>
@@ -352,10 +413,23 @@
     <div class="container">
         <div class="topbar">
             <div class="logo"><a href="index.html">ZEITGEIST.NEWS</a></div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">☰ MENU</button>
             <div class="nav">
+                <a href="index.html" class="active">Startseite</a>
+                <a href="allgemeinwissen.html">Allgemeinwissen</a>
+                <a href="aktuelles.html">Aktuelles</a>
+                <a href="ai-connections.html">AI Connections</a>
                 <a href="manifest.html">Manifest</a>
             </div>
             <div class="date">31.03.2026</div>
+        </div>
+        
+        <div class="mobile-nav">
+            <a href="index.html">Startseite</a>
+            <a href="allgemeinwissen.html">Allgemeinwissen</a>
+            <a href="aktuelles.html">Aktuelles</a>
+            <a href="ai-connections.html">AI Connections</a>
+            <a href="manifest.html">Manifest</a>
         </div>
         
         <section class="hero">
@@ -369,27 +443,27 @@
                 <div class="section-header">Neueste Einträge</div>
                 <div class="articles-list">
                     <article class="article-item">
-                        <div class="article-cat">Geopolitik</div>
-                        <h3 class="article-title"><a href="#">Nahostkrieg und die Weltwirtschaft</a></h3>
-                        <p class="article-excerpt">Wie die aktuellen Konflikte die globalen Lieferketten bedrohen und welche Auswirkungen das für Europa hat.</p>
-                        <a href="#" class="article-link">→ ORIGINAL QUELLE</a>
+                        <div class="article-cat">Allgemeinwissen</div>
+                        <h3 class="article-title"><a href="pax-americana.html">Das Ende von Pax Americana</a></h3>
+                        <p class="article-excerpt">Essay über den Untergang der amerikanischen Weltordnung und die drei großen Umstellungen: Materialismus → Spiritualität, Individualismus → Gemeinschaft, Alte → Junge.</p>
+                        <a href="pax-americana.html" class="article-link">→ ARTIKEL LESEN</a>
                         <div class="article-date">31.03.2026</div>
                     </article>
                     
                     <article class="article-item">
-                        <div class="article-cat">Resilienz</div>
-                        <h3 class="article-title"><a href="#">Resilienz statt Effizienz</a></h3>
-                        <p class="article-excerpt">Warum Just-in-Time-Produktionen und globale Abhängigkeiten unsere größte Schwachstelle sind.</p>
-                        <a href="#" class="article-link">→ ORIGINAL QUELLE</a>
-                        <div class="article-date">30.03.2026</div>
+                        <div class="article-cat">Allgemeinwissen</div>
+                        <h3 class="article-title"><a href="greater-israel.html">Greater-Israel & der Iran-Krieg</a></h3>
+                        <p class="article-excerpt">1:55-stündiges Interview mit Michael Lüders über die Hintergründe des Iran-Konflikts, völkerrechtliche Aspekte und die Frage, wie es weitergeht.</p>
+                        <a href="greater-israel.html" class="article-link">→ ARTIKEL LESEN</a>
+                        <div class="article-date">31.03.2026</div>
                     </article>
                     
                     <article class="article-item">
-                        <div class="article-cat">Gesellschaft</div>
-                        <h3 class="article-title"><a href="#">Die algorithmische Falle</a></h3>
-                        <p class="article-excerpt">Weder Mainstream noch "alternative Medien" liefern die Wahrheit – und wie wir trotzdem informiert bleiben.</p>
+                        <div class="article-cat">Geopolitik</div>
+                        <h3 class="article-title"><a href="#">Nahostkrieg und die Weltwirtschaft</a></h3>
+                        <p class="article-excerpt">Wie die aktuellen Konflikte die globalen Lieferketten bedrohen und welche Auswirkungen das für Europa hat.</p>
                         <a href="#" class="article-link">→ ORIGINAL QUELLE</a>
-                        <div class="article-date">29.03.2026</div>
+                        <div class="article-date">30.03.2026</div>
                     </article>
                 </div>
             </main>
@@ -407,17 +481,14 @@
                     </div>
                     <div class="must-card">
                         <span>Geopolitik</span>
-                        <h4>Die neue Weltordnung</h4>
-                    </div>
-                    <div class="must-card">
-                        <span>Resilienz</span>
-                        <h4>Mentale Stärke</h4>
+                        <h4><a href="allgemeinwissen.html" style="color:inherit;text-decoration:none;">→ Alle Artikel</a></h4>
                     </div>
                 </div>
                 
                 <div class="ai-box">
                     <h4>◈ AI CONNECTION</h4>
                     <p>Tägliche Analyse aller Inhalte. Zusammenhänge erkennen. Muster entdecken.</p>
+                    <a href="ai-connections.html">→ Zur AI Connection</a>
                 </div>
             </aside>
         </div>
@@ -426,5 +497,14 @@
             <p>KEINE WERBUNG · KEINE COOKIES · NUR WISSEN</p>
         </footer>
     </div>
+    
+    <script>
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.mobile-nav').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

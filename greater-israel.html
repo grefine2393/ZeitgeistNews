@@ -57,6 +57,65 @@
         
         .logo a { color: var(--accent); text-decoration: none; }
         
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--accent);
+            background: rgba(0, 255, 204, 0.08);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(8, 8, 12, 0.98);
+            border-bottom: 1px solid var(--border);
+            padding: 20px;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .mobile-nav.active { display: flex; }
+        
+        .mobile-nav a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--text-dim);
+            text-decoration: none;
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .mobile-nav a:hover { color: var(--accent); }
+        
         .back-link {
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
@@ -258,6 +317,8 @@
         @media (max-width: 600px) {
             .article-title { font-size: 26px; }
             .article-content .lead { font-size: 17px; }
+            .mobile-menu-btn { display: block; }
+            nav { display: none; }
         }
     </style>
 </head>
@@ -265,7 +326,22 @@
     <div class="container">
         <div class="topbar">
             <div class="logo"><a href="index.html">ZEITGEIST.NEWS</a></div>
-            <a href="index.html" class="back-link">← Zurück</a>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">☰ MENU</button>
+            <nav>
+                <a href="index.html">Startseite</a>
+                <a href="allgemeinwissen.html">Allgemeinwissen</a>
+                <a href="aktuelles.html">Aktuelles</a>
+                <a href="ai-connections.html">AI Connections</a>
+                <a href="manifest.html">Manifest</a>
+            </nav>
+        </div>
+        
+        <div class="mobile-nav">
+            <a href="index.html">Startseite</a>
+            <a href="allgemeinwissen.html">Allgemeinwissen</a>
+            <a href="aktuelles.html">Aktuelles</a>
+            <a href="ai-connections.html">AI Connections</a>
+            <a href="manifest.html">Manifest</a>
         </div>
         
         <article class="article">
@@ -368,5 +444,13 @@
             <p>KEINE WERBUNG · KEINE COOKIES · NUR WISSEN</p>
         </footer>
     </div>
+    <script>
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.mobile-nav').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
