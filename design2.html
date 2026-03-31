@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeitgeist News</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', -apple-system, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            min-height: 100vh;
+        }
+        header {
+            background: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: #2563eb; }
+        nav a {
+            text-decoration: none;
+            color: #666;
+            margin-left: 30px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #2563eb; }
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .hero-text h1 span { color: #2563eb; }
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .stat { text-align: center; }
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero-image {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border-radius: 24px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 120px;
+            font-weight: 800;
+            opacity: 0.9;
+        }
+        .articles {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px 80px;
+        }
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .article-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 30px;
+            padding: 24px;
+            background: #fff;
+            border-radius: 16px;
+            transition: box-shadow 0.3s;
+        }
+        .article-item:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+        .article-thumb {
+            width: 200px;
+            height: 120px;
+            background: #eee;
+            border-radius: 12px;
+        }
+        .article-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .article-meta {
+            font-size: 13px;
+            color: #999;
+        }
+        .article-meta span { color: #2563eb; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ZEIT<span>GEIST</span></div>
+        <nav>
+            <a href="#">Startseite</a>
+            <a href="#">Nachrichten</a>
+            <a href="#">Über uns</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Nachrichten, die <span>relevant</span> sind</h1>
+            <p>Zeitgeist News bringt Ihnen die wichtigsten Geschichten des Tages – kompakt, informativ und objektiv.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Aktuell</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Quellen</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">Z</div>
+    </section>
+    <section class="articles">
+        <div class="section-title">Aktuelle Artikel</div>
+        <div class="article-list">
+            <article class="article-item">
+                <div class="article-thumb"></div>
+                <div class="article-info">
+                    <h3>Globale Wirtschaft im Wandel</h3>
+                    <p class="article-meta">Wirtschaft • <span>Heute</span></p>
+                </div>
+            </article>
+            <article class="article-item">
+                <div class="article-thumb"></div>
+                <div class="article-info">
+                    <h3>Technologische Innovationen 2026</h3>
+                    <p class="article-meta">Technologie • <span>Gestern</span></p>
+                </div>
+            </article>
+            <article class="article-item">
+                <div class="article-thumb"></div>
+                <div class="article-info">
+                    <h3>Kulturelle Vielfalt in Europa</h3>
+                    <p class="article-meta">Kultur • <span>Gestern</span></p>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

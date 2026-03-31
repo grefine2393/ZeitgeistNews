@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeitgeist News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .logo::after {
+            content: 'NEWS';
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #666;
+            margin-top: 2px;
+        }
+        .date {
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+        .headline {
+            padding: 100px 0;
+            border-bottom: 1px solid #222;
+        }
+        .headline h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            font-weight: 400;
+            line-height: 1.1;
+            max-width: 900px;
+        }
+        .headline h1 .accent {
+            color: #c9a227;
+            font-style: italic;
+        }
+        .headline-meta {
+            margin-top: 30px;
+            display: flex;
+            gap: 30px;
+            font-size: 13px;
+            color: #666;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            padding: 60px 0;
+        }
+        .main-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 24px;
+            background: #1a1a1a;
+        }
+        .main-article h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .main-article p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #999;
+        }
+        .sidebar h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        .sidebar-article {
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+        .sidebar-article h4 {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        .sidebar-article span {
+            font-size: 12px;
+            color: #c9a227;
+        }
+        .footer {
+            padding: 40px 0;
+            border-top: 1px solid #222;
+            text-align: center;
+            font-size: 12px;
+            color: #444;
+        }
+        @media (max-width: 768px) {
+            .headline h1 { font-size: 48px; }
+            .content-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">ZEITGEIST</div>
+            <div class="date">Dienstag, 31. März 2026</div>
+        </header>
+        <section class="headline">
+            <h1>Die Geschichte schreibt sich <span class="accent">neu</span></h1>
+            <div class="headline-meta">
+                <span>Von Redaktion</span>
+                <span>•</span>
+                <span>5 Min Lesezeit</span>
+            </div>
+        </section>
+        <div class="content-grid">
+            <article class="main-article">
+                <img src="" alt="">
+                <h2>Die wichtigesten Ereignisse unserer Zeit</h2>
+                <p>In einer sich rasant verändernden Welt ist es wichtiger denn je, informiert zu bleiben. Zeitgeist News bietet Ihnen tiefgründige Analysen und relevante Nachrichten aus aller Welt.</p>
+            </article>
+            <aside class="sidebar">
+                <h3>Aktuell</h3>
+                <div class="sidebar-article">
+                    <h4>Wirtschaft im Aufschwung</h4>
+                    <span>Wirtschaft</span>
+                </div>
+                <div class="sidebar-article">
+                    <h4>Technologie von morgen</h4>
+                    <span>Tech</span>
+                </div>
+                <div class="sidebar-article">
+                    <h4>Kultur &amp; Gesellschaft</h4>
+                    <span>Kultur</span>
+                </div>
+            </aside>
+        </div>
+        <footer class="footer">
+            © 2026 Zeitgeist News – Relevant. Kompakt. Objektiv.
+        </footer>
+    </div>
+</body>
+</html>
