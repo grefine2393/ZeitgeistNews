@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greater-Israel & Der Iran-Krieg – Zeitgeist News</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700&display=swap">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg: #08080c;
+            --text: #e8e8e8;
+            --text-dim: #6a6a6a;
+            --accent: #00ffcc;
+            --accent-glow: rgba(0, 255, 204, 0.25);
+            --border: #1a1a1f;
+            --card-bg: #0e0e14;
+            --grid-line: rgba(255, 255, 255, 0.02);
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            background-image: 
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; }
+        
+        .topbar {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 12, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: var(--accent);
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+        
+        .logo a { color: var(--accent); text-decoration: none; }
+        
+        .back-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        
+        .back-link:hover { color: var(--accent); }
+        
+        .article {
+            padding: 50px 0;
+        }
+        
+        .article-header {
+            margin-bottom: 40px;
+        }
+        
+        .article-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        
+        .article-title {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .article-title span { color: var(--accent); }
+        
+        .article-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+        
+        .article-source {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: rgba(0, 255, 204, 0.08);
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--accent);
+            transition: all 0.2s;
+        }
+        
+        .article-source:hover {
+            background: rgba(0, 255, 204, 0.15);
+        }
+        
+        .article-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+        
+        .article-content .lead {
+            font-size: 20px;
+            font-weight: 500;
+            color: #ddd;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .article-content h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin: 40px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .article-content ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .article-content li {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #ccc;
+            margin-bottom: 12px;
+        }
+        
+        .article-content li::marker { color: var(--accent); }
+        
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 15px;
+            color: #bbb;
+            margin: 0;
+        }
+        
+        .warning-box {
+            background: rgba(255, 100, 100, 0.08);
+            border: 1px solid rgba(255, 100, 100, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 32px 0;
+        }
+        
+        .warning-box p {
+            font-size: 14px;
+            color: #ff9999;
+            margin: 0;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        footer p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--text-dim);
+            letter-spacing: 3px;
+        }
+        
+        @media (max-width: 600px) {
+            .article-title { font-size: 26px; }
+            .article-content .lead { font-size: 17px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo"><a href="index.html">ZEITGEIST.NEWS</a></div>
+            <a href="index.html" class="back-link">← Zurück</a>
+        </div>
+        
+        <article class="article">
+            <div class="article-header">
+                <div class="article-category">Allgemeinwissen</div>
+                <h1 class="article-title">Greater-Israel & der <span>Iran-Krieg</span></h1>
+                <div class="article-meta">31. März 2026 • Michael Lüders • 1:55 Std. Video</div>
+                <a href="https://www.youtube.com/watch?v=sMAbmJQi_8E" class="article-source" target="_blank">→ ORIGINAL QUELLE</a>
+            </div>
+            
+            <div class="article-content">
+                <p class="lead">Der israelisch-amerikanische Krieg gegen den Iran ist völkerrechtswidrig – und die westliche Politik heuchelt. Ein tiefgehender Blick auf die Hintergründe.</p>
+                
+                <h2>// Die Ausgangslage</h2>
+                <p>Der Iran-Krieg begann im Juni 2025 mit israelisch-amerikanischen Angriffen. Der Bundespräsident nannte ihn "völkerrechtswidrig" – und bekam dafür Kritik. Doch: Jeder, der es wissen will, weiß, dass dieser Krieg gegen das Völkerrecht verstößt.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Präventivkrieg?</strong> Ein Präventivkrieg ist nur legal, wenn ein Angriff unmittelbar bevorsteht. Es gab keine Hinweise darauf, dass der Iran jemanden angreifen wollte. Im Gegenteil: Die USA und der Iran verhandelten gerade, um den Konflikt zu beenden. Diese Verhandlungen waren nur ein Täuschungsmanöver.</p>
+                </div>
+                
+                <h2>// Die Geschichte des Problems</h2>
+                <p>Die Probleme mit dem Iran aus westlicher Sicht begannen 1979 mit der islamischen Revolution. Aber die Wurzeln liegen viel tiefer – im Jahr 1953.</p>
+                
+                <ul>
+                    <li><strong>1953:</strong> Die USA und Großbritannien putschten gegen den demokratisch gewählten Ministerpräsidenten Mossadegh, weil er die iranische Ölindustrie verstaatlichen wollte. Der Schah kam an die Macht.</li>
+                    <li><strong>1979:</strong> Die islamische Revolution war die "verspätete Antwort" auf diesen Putsch – eine Generation später.</li>
+                    <li><strong>1980-88:</strong> Der Iran-Irak-Krieg. Der Westen (USA, Deutschland, Frankreich) unterstützte Saddam Hussein mit Waffen – sogar mit Giftgas, das gegen Iraner eingesetzt wurde.</li>
+                    <li><strong>2015:</strong> Der Iran-Deal (JCPOA) wurde geschlossen. Der Iran gab sein Atomprogramm auf. 2018 kündigte Trump den Deal auf Empfehlung der Israel-Lobby.</li>
+                </ul>
+                
+                <h2>// Das System Iran</h2>
+                <p>Der Iran ist kein normales Land mit einer zentralen Führung. Er ist ein <strong>dezentrales Netzwerk</strong> aus Politik, Wirtschaft und Militär. Wenn die Führung getötet wird, bricht das System nicht zusammen – es geht weiter.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Der Tausendfüßler:</strong> Wenn du einem Tausendfüßler einen Fuß abschlägst, bleiben 999 übrig. Das System im Iran funktioniert ähnlich. Es gibt immer Nachfolger. Die USA unterschätzen das jedes Mal.</p>
+                </div>
+                
+                <h2>// Der asymmetrische Krieg</h2>
+                <p>Die Iraner wissen, dass sie militärisch nicht gewinnen können. Also müssen sie auch nicht gewinnen. Sie müssen nur <strong>durchhalten</strong>.</p>
+                
+                <ul>
+                    <li>Sie können die Straße von Hormus sperren – ein Fünftel der weltweiten Ölversorgung geht dadurch</li>
+                    <li>Sie können die arabischen Golfstaaten angreifen, wo US-Militärbasen sind</li>
+                    <li>Sie können Wasserentsalzungsanlagen zerstören – ohne Wasser können diese Staaten nicht existieren</li>
+                    <li>Die USA und Israel können nicht gewinnen, aber sie können einen furchtbaren Preis zahlen</li>
+                </ul>
+                
+                <h2>// Die religiöse Dimension</h2>
+                <p>Die meisten im Westen verstehen den Iran nicht, weil sie die religiöse Komponente nicht kennen. Der Iran ist <strong>Zwölfer-Schia</strong> – eine Strömung des Islam.</p>
+                
+                <ul>
+                    <li>Der oberste religiöse Führer (Ayatollah) ist wie der Papst für Katholiken</li>
+                    <li>Sie glauben an den 12. Imam, der in die Verborgenheit entrückt ist und eines Tages zurückkehren wird</li>
+                    <li>Die Leidensfähigkeit der Iraner ist deshalb sehr hoch – sie sehen sich als die Gerechten, die wie Hussein in Kerbela kämpfen</li>
+                    <li>8 Jahre Krieg gegen den Irak haben sie überlebt. Sie kennen Bombardierung und Tod.</li>
+                </ul>
+                
+                <h2>// Die Weltsicherheit</h2>
+                <div class="warning-box">
+                    <p><strong>Warnung:</strong> Dieser Krieg kann zu einem Dritten Weltkrieg führen. Russland und China unterstützen den Iran. Die USA sind eine Weltmacht im Niedergang. Die Fronten verhärten sich. Gleichzeitig gibt es Probleme mit Helium-Lieferungen (für Computerchips), Dünger-Produktion und Energieversorgung.</p>
+                </div>
+                
+                <ul>
+                    <li><strong>Straße von Hormus:</strong> 20% der weltweiten Ölversorgung</li>
+                    <li><strong>Rotes Meer (Bab-el-Mandeb):</strong> bereits gesperrt, wird aber offen gehalten</li>
+                    <li><strong>Helium:</strong> 30% der Weltproduktion in Katar jetzt offline</li>
+                    <li>Wenn beide Routen gesperrt werden: <strong>Weltwirtschaftskollaps</strong></li>
+                </ul>
+                
+                <h2>// Die westliche Heuchelei</h2>
+                <p>Die westliche Politik ist zynisch. Während sie den russischen Angriffskrieg in der Ukraine verurteilt, schweigt sie zum israelisch-amerikanischen Krieg gegen den Iran. Die deutsche Politik ist "transatlantisch orientiert" – folgt bedingungslos den USA.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Spanien als Vorbild:</strong> Die spanische Regierung unter Pedro Sanchez hat den Iran-Angriff klar als völkerrechtswidrig verurteilt und den Botschafter aus Israel zurückgerufen. Deutschland? Schweigt.</p>
+                </div>
+                
+                <h2>// Die Zukunft</h2>
+                <p>Michael Lüders ist überzeugt: Der Krieg wird weiter eskalieren. Die Amerikaner werden mit Bodentruppen reingehen. Die Zeit arbeitet für den Iran. Je länger der Krieg dauert, desto mehr wird der Iran zum Symbol des Widerstands gegen den westlichen Imperialismus.</p>
+                
+                <p>Für Deutschland bedeuted das: Höhere Energiepreise, Inflation, mögliche Versorgungskrisen. Die Bundesregierung hat sich von russischer Energie abgekoppelt – und ist jetzt abhängig von amerikanischem LNG. Man hat sich erpressbar gemacht.</p>
+                
+                <p>Die Zeiten ändern sich. "Nichts wird wie gewohnt werden."</p>
+            </div>
+        </article>
+        
+        <footer>
+            <p>KEINE WERBUNG · KEINE COOKIES · NUR WISSEN</p>
+        </footer>
+    </div>
+</body>
+</html>
