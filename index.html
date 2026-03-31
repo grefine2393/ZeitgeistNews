@@ -56,6 +56,29 @@
             text-shadow: 0 0 20px var(--accent-glow);
         }
         
+        .logo a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        
+        .nav a:hover {
+            color: var(--accent);
+        }
+        
         .date {
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
@@ -328,7 +351,10 @@
 <body>
     <div class="container">
         <div class="topbar">
-            <div class="logo">ZEITGEIST.NEWS</div>
+            <div class="logo"><a href="index.html">ZEITGEIST.NEWS</a></div>
+            <div class="nav">
+                <a href="manifest.html">Manifest</a>
+            </div>
             <div class="date">31.03.2026</div>
         </div>
         
