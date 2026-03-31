@@ -95,8 +95,8 @@
         
         .mobile-nav {
             display: none;
-            position: absolute;
-            top: 100%;
+            position: fixed;
+            top: 60px;
             left: 0;
             right: 0;
             background: rgba(8, 8, 12, 0.98);
@@ -104,11 +104,11 @@
             padding: 20px;
             flex-direction: column;
             gap: 12px;
+            z-index: 9999;
         }
         
         .mobile-nav.active { 
             display: flex; 
-            z-index: 200;
         }
         
         .mobile-nav a {
@@ -424,14 +424,14 @@
                 <a href="manifest.html">Manifest</a>
             </div>
             <div class="date">31.03.2026</div>
-        </div>
-        
-        <div class="mobile-nav">
-            <a href="index.html">Startseite</a>
-            <a href="allgemeinwissen.html">Allgemeinwissen</a>
-            <a href="aktuelles.html">Aktuelles</a>
-            <a href="ai-connections.html">AI Connections</a>
-            <a href="manifest.html">Manifest</a>
+            
+            <div class="mobile-nav">
+                <a href="index.html">Startseite</a>
+                <a href="allgemeinwissen.html">Allgemeinwissen</a>
+                <a href="aktuelles.html">Aktuelles</a>
+                <a href="ai-connections.html">AI Connections</a>
+                <a href="manifest.html">Manifest</a>
+            </div>
         </div>
         
         <section class="hero">
