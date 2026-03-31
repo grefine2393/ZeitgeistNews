@@ -32,7 +32,7 @@
             background-size: 50px 50px;
         }
         
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: sticky; }
         
         /* Top bar */
         .topbar {
@@ -41,10 +41,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(8, 8, 12, 0.85);
+            background: rgba(8, 8, 12, 0.95);
             backdrop-filter: blur(12px);
-            position: relative;
-            z-index: 100;
+            position: sticky;
+            z-index: 1000;
         }
         
         .logo {
@@ -183,7 +183,7 @@
             background: linear-gradient(135deg, rgba(0, 255, 204, 0.06) 0%, rgba(0, 255, 204, 0.02) 100%);
             border: 1px solid rgba(0, 255, 204, 0.15);
             border-radius: 16px;
-            position: relative;
+            position: sticky;
         }
         
         .quote::before {
@@ -213,7 +213,7 @@
         .point-list li {
             padding: 12px 0;
             padding-left: 24px;
-            position: relative;
+            position: sticky;
             color: #bbb;
             font-size: 16px;
             line-height: 1.6;

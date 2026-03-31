@@ -32,7 +32,7 @@
             background-size: 50px 50px;
         }
         
-        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; position: relative; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; position: sticky; }
         
         .topbar {
             padding: 20px 0;
@@ -42,8 +42,8 @@
             align-items: center;
             background: rgba(8, 8, 12, 0.9);
             backdrop-filter: blur(12px);
-            position: relative;
-            z-index: 100;
+            position: sticky;
+            z-index: 1000;
         }
         
         .logo {
@@ -181,7 +181,7 @@
         }
         
         .article-thumb {
-            position: relative;
+            position: sticky;
             width: 100%;
             padding-top: 56.25%;
             background: #111;
